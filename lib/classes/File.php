@@ -16,7 +16,7 @@ class File
 	 * 
 	 * @return array
 	 */
-	public static function get($url)
+	public static function read($url)
 	{
 		return json_decode(file_get_contents($url), true);
 	}
@@ -29,7 +29,7 @@ class File
 	 * 
 	 * @return bool
 	 */
-	public static function put($url, $data)
+	public static function write($url, $data)
 	{
 		if(file_put_contents($url, json_encode($data)))
 			return true;
