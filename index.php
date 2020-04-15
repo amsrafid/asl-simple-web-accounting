@@ -2,6 +2,9 @@
 
 	/**
 	 * Include necessary files
+	 * - Classes
+	 * - Models
+	 * - functions
 	 */
 	include 'global.php';
 
