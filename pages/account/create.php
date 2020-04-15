@@ -1,6 +1,4 @@
 <?php
-	include '../classes/File.php';
-
 	$msg = "";
 
 	if (isset($_POST['number'])) {
@@ -25,12 +23,12 @@
 		}
 	}
 
-	include '../header.php';
+	get_header();
 ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<?php include '../navigation.php'; ?>
+				<?php get_nav(); ?>
 			</div>
 			<div class="col-md-6">
 				<h3 class = "mt-3 mb-3">Account Creating Form</h3>
@@ -55,4 +53,4 @@
 		</div>
 	</div>
 
-<?php include '../footer.php'; ?>
+<?php get_footer(); ?>
