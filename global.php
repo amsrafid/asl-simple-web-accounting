@@ -3,7 +3,8 @@
 /* Classes */
 
 	$classes = [
-		'File'
+		'File',
+		'Arr',
 	];
 
 	foreach($classes as $class)

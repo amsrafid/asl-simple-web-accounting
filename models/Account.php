@@ -5,7 +5,6 @@
  */
 class Account
 {
-
 	/**
 	 * Accounts Table
 	 * 
@@ -22,6 +21,18 @@ class Account
 	{
 		return File::read(self::$accountTable);
 	}
+
+	/**
+	 * Create new record
+	 * 
+	 * @param array $accounts		Account Data array
+	 * 
+	 * @return bool
+	 */
+	public static function create($accounts)
+	{
+		return File::write(self::$accountTable, $accounts) ? true : false;
+	}
 	
 	/**
 	 * get single Account data
@@ -37,6 +48,38 @@ class Account
 			return $file[$id];
 		else
 			return false;
+	}
+
+	/**
+	 * Update Account Table
+	 * 
+	 * @param array $data  Data Array
+	 * 
+	 * @return bool
+	 */
+	public static function update($accounts)
+	{
+		return File::write(self::$accountTable, $accounts) ? true : false;
+	}
+
+	/**
+	 * Delete data from json Data
+	 * 
+	 * @param array $number  Key number
+	 * 
+	 * @return bool
+	 */
+	public static function delete($number)
+	{
+		if(self::find($number)) {
+			$data = self::all();
+
+			unset($data[$number]);
+
+			return self::create($data);
+
+		}
+		return false;
 	}
 
 }

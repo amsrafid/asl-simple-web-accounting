@@ -18,3 +18,8 @@ function get_footer() {
 function get_nav() {
 	include 'pages/navigation.php';
 }
+
+function redirect($url)
+{
+	header("location: ". url($url));
+}

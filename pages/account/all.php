@@ -1,18 +1,25 @@
-<?php get_header();	?>
+<?php get_header();
+	$msg = Arr::has($_GET, 'msg');
+
+	if(isset($_GET['number'])) {
+		if (Account::delete($_GET['number']))
+			redirect("account/all/?msg=Account is deleted successfully");
+		else
+			redirect("account/all/?msg=Account is not deleted");
+	}
+?>
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
 			<?php get_nav(); ?>
-
-
 		</div>
 		<div class="col-md-8">
 			<h3 class = "pt-4 pb-4">All Account</h3>
+			<?php echo $msg ? '<div class="alert alert-info">'.$msg.'</div>' : ''; ?>
 		<?php
-			$all =Account::all(); 
-			if($all) {
-				?>
+			$all = Account::all();
+			if($all) { ?>
 			<table class="table table-stripe">
 				<tr>
 					<th>#</th>
@@ -42,10 +49,8 @@
 					</tr>
 					<?php
 					$i++;
-				}
-				?>
+				} ?>
 			</table>
-				
 				<?php
 			} else
 				echo "No account is created yet.";
