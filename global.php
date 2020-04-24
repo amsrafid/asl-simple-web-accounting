@@ -13,7 +13,11 @@
 /* Models */
 
 	$models = [
-		'Account'
+		'Model',
+		'Account',
+		'Withdraw',
+		'Deposite',
+		'Statement'
 	];
 
 	foreach($models as $model)
