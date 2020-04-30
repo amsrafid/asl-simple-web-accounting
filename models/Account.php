@@ -12,4 +12,12 @@ class Account extends Model
 	 */
 	protected static $table = 'data/account.json';
 
+	/**
+	 * 
+	 */
+	public static function create($accounts)
+	{
+		return File::write($table, $accounts) ? true : false;
+	}
+	
 }

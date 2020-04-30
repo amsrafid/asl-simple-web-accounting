@@ -21,7 +21,10 @@ class Model
 	 */
 	public static function create($accounts)
 	{
-		return File::write(self::tableName(), $accounts) ? true : false;
+		$table = self::all();
+		$table[self::primaryKey()] = $accounts;
+
+		return File::write(self::tableName(), $table) ? true : false;
 	}
 	
 	/**
@@ -47,9 +50,14 @@ class Model
 	 * 
 	 * @return bool
 	 */
-	public static function update($accounts)
+	public static function update($accounts, $key = null)
 	{
-		return File::write(self::tableName(), $accounts) ? true : false;
+		if($key) {
+			$table = self::all();
+			$table[$key] = $accounts;
+			return File::write(self::tableName(), $table) ? true : false;
+		} else
+			return File::write($table, $accounts) ? true : false;
 	}
 
 	/**
@@ -85,10 +93,12 @@ class Model
 
 	private static function primaryKey()
 	{
-		if(!empty(self::all())) {
-			return '';
-		} else {
+		$table = self::all();
+		if(!empty($table)) {
+			$keys = array_keys($table);
+			return $keys[count($keys) - 1] + 1;			
+		} else
 			return '1';
-		}
 	}
+
 }

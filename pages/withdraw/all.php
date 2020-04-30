@@ -9,11 +9,11 @@
 			<?php get_nav(); ?>
 		</div>
 		<div class="col-md-8">
-			<h3 class = "pt-4 pb-4">All Deposite</h3>
+			<h3 class = "pt-4 pb-4">All Withdraw</h3>
 			<?php echo $msg ? '<div class="alert alert-info">'.$msg.'</div>' : ''; ?>
 		<?php
 			$account = Account::all();
-			$all = Deposite::all();
+			$all = Withdraw::all();
 			if($all) { ?>
 			<table class="table table-stripe">
 				<tr>
@@ -42,7 +42,7 @@
 			</table>
 				<?php
 			} else
-				echo "No deposite is created yet.";
+				echo "No withdraw is created yet.";
 		?>
 		</div>
 	</div>

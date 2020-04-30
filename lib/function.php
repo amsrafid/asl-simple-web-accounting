@@ -23,3 +23,10 @@ function redirect($url)
 {
 	header("location: ". url($url));
 }
+
+function beautifyDate($date)
+{
+	$month = [ 'jan',  'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+	$date = explode("-", $date);
+	return "{$date[2]} {$month[(int)$date - 1]}, {$date[0]}";
+}

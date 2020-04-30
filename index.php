@@ -16,6 +16,9 @@
 	 * include home.php
 	 */
 	if($route)
-		include 'pages/' .$route.'.php';
+		if(file_exists('pages/' .$route.'.php'))
+			include 'pages/' .$route.'.php';
+		else
+			include 'pages/404.php';
 	else
 		include 'pages/home.php';
