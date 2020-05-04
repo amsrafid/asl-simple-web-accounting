@@ -9,3 +9,9 @@
 	<link rel="stylesheet" href="<?= url('asset/css/style.css'); ?>">
 </head>
 <body>
+
+<?php if(Session::auth()) { ?>
+		<header class = "text-right">
+			<a href="<?= url('login'); ?>" class="d-inline">Logout</a>
+		</header>
+<?php } ?>

@@ -8,6 +8,11 @@
 	 */
 	include 'global.php';
 
+	
+	/* Start Session */
+	new Session();
+	
+	/* Get Route */
 	$route = route();
 
 	/**
@@ -15,10 +20,14 @@
 	 * when no route is found
 	 * include home.php
 	 */
-	if($route)
-		if(file_exists('pages/' .$route.'.php'))
-			include 'pages/' .$route.'.php';
+
+	if (Session::auth()) {
+		if($route)
+			if(file_exists('pages/' .$route.'.php'))
+				include 'pages/' .$route.'.php';
+			else
+				include 'pages/404.php';
 		else
-			include 'pages/404.php';
-	else
-		include 'pages/home.php';
+			include 'pages/home.php';
+	} else
+		include 'pages/login.php';

@@ -1,3 +1,12 @@
 /* 
 	Main Style
 */
+
+.login-form {
+	margin-top: 100px;
+	padding-top: 60px;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 20px #eee;
+	background-color: #fff;
+}

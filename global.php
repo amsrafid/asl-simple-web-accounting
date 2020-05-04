@@ -5,6 +5,7 @@
 	$classes = [
 		'File',
 		'Arr',
+		'Session',
 	];
 
 	foreach($classes as $class)
@@ -17,7 +18,8 @@
 		'Account',
 		'Withdraw',
 		'Deposite',
-		'Statement'
+		'Statement',
+		'User'
 	];
 
 	foreach($models as $model)
