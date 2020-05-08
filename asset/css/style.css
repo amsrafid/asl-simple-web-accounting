@@ -10,3 +10,17 @@
 	box-shadow: 0 0 20px #eee;
 	background-color: #fff;
 }
+
+.home-title {
+	padding-top: 70px;
+}
+.header {
+	padding: 15px;
+}
+
+.sidebar-navigation ul {
+	padding: 10px 20px;
+}
+.sidebar-navigation ul li {
+	list-style: none;
+}

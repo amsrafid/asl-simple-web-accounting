@@ -2,13 +2,13 @@
 
 <div class="container">
 	<div class="row pt-5">
-		<div class="col-md-6 text-center">
-			<h4>Account home</h4>
+		<div class="col-md-6">
+			<?php get_nav(); ?>
 		</div>
 		<div class="col-md-6">
-
-			<?php get_nav(); ?>
-		
+			<h3 class = "home-title">Account home</h3>
+			<p>This is a account management software<br />
+				Developed for ASL online web developement class.</p>
 		</div>
 	</div>
 </div>

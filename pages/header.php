@@ -11,7 +11,13 @@
 <body>
 
 <?php if(Session::auth()) { ?>
-		<header class = "text-right">
-			<a href="<?= url('login'); ?>" class="d-inline">Logout</a>
-		</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<header class = "header text-right">
+					<a href="<?= url('login'); ?>" class="d-inline">Logout</a>
+				</header>
+			</div>
+		</div>
+	</div>
 <?php } ?>

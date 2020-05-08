@@ -32,11 +32,6 @@
 	<div class="row">
 		<div class="col-md-6">
 			<?php get_nav(); ?>
-
-			<div class="pt-5">
-				<a href="<?= url('deposite/all'); ?>">View All</a>
-			</div>
-
 		</div>
 		<div class="col-md-6">
 			<h3 class = "mt-3 mb-3">Deposite Creating Form</h3>
